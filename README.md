@@ -2,7 +2,7 @@
 
 # 🏛️ TKA Pusmendik Portal Mirror & CBT Hub
 **Infrastruktur Mirroring & Monitoring Real-Time Tes Kemampuan Akademik (TKA) 2026**  
-*SMK Negeri 1 Pungging — Bengkel Teknik Komputer & Jaringan (TKJ)*
+*SMK Negeri 1 Pungging - Bengkel Teknik Komputer & Jaringan (TKJ)*
 
 ---
 
@@ -71,7 +71,7 @@ npm start
 ## 👨‍💻 Pengembang
 
 * **Author:** **Sheva Ramdhani**
-* **Institusi:** SMK Negeri 1 Pungging — Teknik Komputer dan Jaringan (TKJ)
+* **Institusi:** SMK Negeri 1 Pungging - Teknik Komputer dan Jaringan (TKJ)
 * **LinkedIn:** [linkedin.com/in/sheva-ramdhani](https://www.linkedin.com/in/sheva-ramdhani-6b46a9331)
 
 ---
