@@ -1,0 +1,28 @@
+services:
+  tka-mirror:
+    container_name: tka-mirror
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8085:8085"
+    environment:
+      - NODE_ENV=production
+      - PORT=8085
+      - ADMIN_USER=servertkj
+      - ADMIN_PASS=ServerTkj26#!
+    volumes:
+      # Persistent config (survives container rebuilds & enables dynamic admin changes)
+      - ./config.json:/app/config.json
+      # Persistent download files directory
+      - ./public/downloads:/app/public/downloads
+      # Host directories for scanning custom storage paths on Linux server
+      - /opt/labserver:/opt/labserver
+      - /srv/sftpgo:/srv/sftpgo
+    networks:
+      - lab-network
+
+networks:
+  lab-network:
+    external: true

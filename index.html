@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beranda — Persiapan TKA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-marks">
+        <img src="assets/logo-kemendikdasmen.png" alt="Logo Kementerian Pendidikan Dasar dan Menengah">
+        <span class="brand-divider"></span>
+        <img src="assets/logo-tka.png" alt="Logo TKA - Tes Kemampuan Akademik">
+      </span>
+      <span class="brand-text">
+        <strong>Persiapan TKA 2026</strong>
+        <span>Aplikasi &amp; jadwal ujian</span>
+      </span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" aria-current="page">Beranda</a>
+      <a href="unduhan.html">Unduhan</a>
+      <a href="jadwal.html">Jadwal</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero-dash">
+  <div class="wrap">
+    <div class="hero-dash-inner">
+      <div>
+        <h1>Apa itu Tes Kemampuan Akademik?</h1>
+        <p>Tes Kemampuan Akademik (TKA) adalah asesmen dari Kemendikdasmen untuk mengukur capaian akademik murid secara terstandar. Hasilnya dipakai sebagai syarat wajib SNBT/UTBK dan nilai tambah pada seleksi PTN jalur prestasi (SNBP).</p>
+        <a class="btn btn-primary" href="#statistik">Lihat statistik pendaftaran</a>
+      </div>
+      <div class="member-card">
+        <h4>Member Area</h4>
+        <input type="text" placeholder="Username" disabled>
+        <input type="password" placeholder="Password" disabled>
+        <button type="button" disabled title="Tampilan contoh, belum terhubung ke sistem">Masuk</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="wrap-wide wrap">
+
+    <div class="dash-section" id="statistik">
+      <div class="dash-section-head">
+        <h2>Statistik Pendaftaran TKA</h2>
+        <span class="sample-tag">Data contoh &mdash; bukan data resmi</span>
+      </div>
+
+      <div class="filter-bar">
+        <select id="filter-jenjang">
+          <option>Semua Jenjang</option>
+          <option>SD/MI</option>
+          <option>SMP/MTs</option>
+          <option>SMA/MA</option>
+          <option>SMK</option>
+        </select>
+      </div>
+
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="stat-num">1.250</div>
+          <div class="stat-label">Satuan Pendidikan</div>
+        </div>
+        <div class="stat-card is-accent">
+          <div class="stat-num">18.400</div>
+          <div class="stat-label">Calon Peserta</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">15.900</div>
+          <div class="stat-label">Pendaftar Lengkap</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">2.500</div>
+          <div class="stat-label">Pendaftar Belum Lengkap</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <h3>Grafik Calon Peserta Harian</h3>
+          <canvas id="chart-harian" height="160"></canvas>
+        </div>
+        <div class="chart-card">
+          <h3>Grafik Calon Peserta Harian (Kumulatif)</h3>
+          <canvas id="chart-kumulatif" height="160"></canvas>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Jenjang</th>
+              <th>Satuan Pendidikan</th>
+              <th>Calon Peserta</th>
+              <th>Pendaftar Lengkap</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SD/MI</td><td>420</td><td>5.100</td><td>4.700</td><td>92%</td></tr>
+            <tr><td>SMP/MTs</td><td>310</td><td>4.800</td><td>4.300</td><td>90%</td></tr>
+            <tr><td>SMA/MA</td><td>260</td><td>4.600</td><td>3.900</td><td>85%</td></tr>
+            <tr><td>SMK</td><td>230</td><td>3.400</td><td>2.700</td><td>79%</td></tr>
+            <tr><td>Paket A/B/C</td><td>30</td><td>500</td><td>300</td><td>60%</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td>Total</td><td>1.250</td><td>18.400</td><td>15.900</td><td>86%</td></tr>
+          </tfoot>
+        </table>
+      </div>
+    </div>
+
+    <div class="dash-section">
+      <div class="dash-section-head">
+        <h2>Status &amp; Moda Pelaksanaan</h2>
+        <span class="sample-tag">Data contoh &mdash; bukan data resmi</span>
+      </div>
+
+      <div class="donut-grid">
+        <div class="donut-card">
+          <h4>SD/MI</h4>
+          <canvas id="donut-sd" height="140"></canvas>
+          <div class="donut-legend">
+            <span><i class="legend-dot" style="background:#27AE60"></i>Mandiri</span>
+            <span><i class="legend-dot" style="background:#F2B134"></i>Menumpang</span>
+            <span><i class="legend-dot" style="background:#CBD5D6"></i>Belum</span>
+          </div>
+        </div>
+        <div class="donut-card">
+          <h4>SMA/MA</h4>
+          <canvas id="donut-sma" height="140"></canvas>
+          <div class="donut-legend">
+            <span><i class="legend-dot" style="background:#27AE60"></i>Mandiri</span>
+            <span><i class="legend-dot" style="background:#F2B134"></i>Menumpang</span>
+            <span><i class="legend-dot" style="background:#CBD5D6"></i>Belum</span>
+          </div>
+        </div>
+        <div class="donut-card">
+          <h4>SMK</h4>
+          <canvas id="donut-smk" height="140"></canvas>
+          <div class="donut-legend">
+            <span><i class="legend-dot" style="background:#27AE60"></i>Mandiri</span>
+            <span><i class="legend-dot" style="background:#F2B134"></i>Menumpang</span>
+            <span><i class="legend-dot" style="background:#CBD5D6"></i>Belum</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Jenjang</th>
+              <th>Online</th>
+              <th>Semi Online</th>
+              <th>Belum Menentukan</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>SD/MI</td><td>310 (74%)</td><td>90 (21%)</td><td>20 (5%)</td></tr>
+            <tr><td>SMP/MTs</td><td>250 (81%)</td><td>50 (16%)</td><td>10 (3%)</td></tr>
+            <tr><td>SMA/MA</td><td>210 (81%)</td><td>40 (15%)</td><td>10 (4%)</td></tr>
+            <tr><td>SMK</td><td>170 (74%)</td><td>50 (22%)</td><td>10 (4%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="dash-section">
+      <div class="dash-section-head">
+        <h2>Rekap per Wilayah</h2>
+        <span class="sample-tag">Data contoh, sebagian wilayah</span>
+      </div>
+
+      <div class="table-scroll">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Wilayah</th>
+              <th>Satuan Pendidikan</th>
+              <th>Calon Peserta</th>
+              <th>Mendaftar</th>
+              <th>%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>DKI Jakarta</td><td>95</td><td>1.680</td><td>1.520</td><td>90%</td></tr>
+            <tr><td>Jawa Barat</td><td>210</td><td>3.640</td><td>3.100</td><td>85%</td></tr>
+            <tr><td>Jawa Tengah</td><td>180</td><td>3.020</td><td>2.650</td><td>88%</td></tr>
+            <tr><td>Jawa Timur</td><td>205</td><td>3.410</td><td>2.980</td><td>87%</td></tr>
+            <tr><td>Sumatera Utara</td><td>90</td><td>1.240</td><td>1.010</td><td>81%</td></tr>
+            <tr><td>Sulawesi Selatan</td><td>60</td><td>860</td><td>700</td><td>81%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer-dash">
+  <div class="wrap">
+    <p>Situs disusun untuk kebutuhan persiapan mandiri, bukan situs resmi Kemendikdasmen. Data statistik di halaman ini contoh untuk ilustrasi tampilan.</p>
+    <p><a href="unduhan.html">Lihat aplikasi yang perlu disiapkan &rarr;</a></p>
+  </div>
+</footer>
+
+<script>
+const teal = '#2F8FD1';
+const tealSoft = 'rgba(47,143,209,0.12)';
+const green = '#27AE60';
+const amber = '#F2B134';
+const gray = '#CBD5D6';
+
+function lastNDays(n){
+  const out = [];
+  const today = new Date('2026-09-15');
+  for(let i = n - 1; i >= 0; i--){
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    out.push(d.getDate() + '/' + (d.getMonth()+1));
+  }
+  return out;
+}
+
+const days = lastNDays(14);
+const daily = [180,220,340,410,260,190,520,610,480,300,250,700,650,420];
+const cumulative = daily.reduce((acc, v, i) => { acc.push((acc[i-1]||0) + v); return acc; }, []);
+
+new Chart(document.getElementById('chart-harian'), {
+  type: 'line',
+  data: {
+    labels: days,
+    datasets: [{
+      data: daily,
+      borderColor: teal,
+      backgroundColor: tealSoft,
+      fill: true,
+      tension: 0.3,
+      pointRadius: 2
+    }]
+  },
+  options: {
+    plugins: { legend: { display:false } },
+    scales: { y: { beginAtZero:true } }
+  }
+});
+
+new Chart(document.getElementById('chart-kumulatif'), {
+  type: 'line',
+  data: {
+    labels: days,
+    datasets: [{
+      data: cumulative,
+      borderColor: green,
+      backgroundColor: 'rgba(39,174,96,0.12)',
+      fill: true,
+      tension: 0.3,
+      pointRadius: 2
+    }]
+  },
+  options: {
+    plugins: { legend: { display:false } },
+    scales: { y: { beginAtZero:true } }
+  }
+});
+
+function donut(id, values){
+  new Chart(document.getElementById(id), {
+    type: 'doughnut',
+    data: {
+      labels: ['Mandiri','Menumpang','Belum Ditetapkan'],
+      datasets: [{ data: values, backgroundColor: [green, amber, gray], borderWidth:0 }]
+    },
+    options: {
+      cutout: '65%',
+      plugins: { legend: { display:false } }
+    }
+  });
+}
+
+donut('donut-sd', [74, 21, 5]);
+donut('donut-sma', [81, 15, 4]);
+donut('donut-smk', [74, 22, 4]);
+</script>
+
+</body>
+</html>

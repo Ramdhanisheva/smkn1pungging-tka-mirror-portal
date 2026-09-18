@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tes Kemampuan Akademik (TKA) 2026 — SMKN 1 Pungging</title>
+  
+  <!-- Fonts & FontAwesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <!-- Chart.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========================================== -->
+  <!-- 1. HEADER (CLEAN WHITE) -->
+  <!-- ========================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#home" class="brand-wrapper">
+        <div class="brand-stacked-box">
+          <div class="brand-pusmendik-top">
+            <img src="assets/logo-kemendikbud.png" alt="Logo Kemendikbud" class="logo-tutwuri-icon">
+            <div class="pusmendik-title-wrap">
+              <strong>PUSMENDIK</strong>
+              <small>Pusat Asesmen Pendidikan</small>
+            </div>
+          </div>
+          <div class="brand-tka-bottom">
+            <img src="assets/logo-tka.png" alt="Logo TKA #JUJUR,GEMBIRA" class="logo-tka-stacked">
+          </div>
+        </div>
+        <span class="logo-divider"></span>
+        <div class="brand-school-pill">
+          <img src="assets/logo-smkn1pungging.png" alt="Logo SMKN 1 Pungging" class="logo-school-img">
+          <span>SMKN 1 PUNGGING</span>
+        </div>
+      </a>
+
+      <!-- Main Navigation -->
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" class="nav-link active">Beranda</a>
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#statistik" class="nav-link">Statistik</a>
+        <a href="#unduhan" class="nav-link">Unduhan</a>
+        <a href="#jadwal" class="nav-link">Jadwal</a>
+        <a href="#unduhan" class="btn-coba-tka"><i class="fa-solid fa-download"></i> Unduh Aplikasi TKA</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Buka Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- 2. HERO BANNER & MEMBER AREA (#home) -->
+  <!-- ========================================== -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Text -->
+        <div class="hero-left">
+          <h1>Apa Itu Tes Kemampuan Akademik ?</h1>
+          <p>
+            Tes Kemampuan Akademik (TKA) dilatarbelakangi oleh kebutuhan adanya pelaporan capaian akademik individu murid dari penilaian yang terstandar. Tidak tersedianya laporan capaian akademik individu dari penilaian terstandar pada beberapa tahun terakhir menimbulkan beberapa permasalahan. Permasalahan muncul terutama pada situasi ketika perbandingan capaian akademik murid yang berasal dari satuan pendidikan dilakukan, seperti pada proses seleksi.
+          </p>
+          <a href="#tentang" class="btn-selengkapnya">
+            <i class="fa-solid fa-circle-arrow-right"></i> Selengkapnya
+          </a>
+        </div>
+
+        <!-- Right: Promosi Unduhan Aplikasi TKA -->
+        <div class="hero-download-showcase">
+          <div class="hds-header">
+            <i class="fa-solid fa-cloud-arrow-down"></i>
+            <div>
+              <h3>Unduh Aplikasi TKA 2026</h3>
+              <small>Aplikasi resmi &amp; pendukung ujian siap pakai</small>
+            </div>
+          </div>
+          <div class="hds-body">
+            <div class="hds-item" onclick="goToDownloadCategory('utama')">
+              <div class="hds-icon bg-blue"><i class="fa-solid fa-window-maximize"></i></div>
+              <div class="hds-info">
+                <strong>Exambrowser Klien (x64 / x86)</strong>
+                <span>Wajib untuk komputer/laptop seluruh peserta ujian</span>
+              </div>
+              <i class="fa-solid fa-chevron-right hds-arrow"></i>
+            </div>
+
+            <div class="hds-item" onclick="goToDownloadCategory('server')">
+              <div class="hds-icon bg-orange"><i class="fa-solid fa-server"></i></div>
+              <div class="hds-info">
+                <strong>VHD TKA 2026 (Semi-Daring)</strong>
+                <span>Image VirtualBox server lokal Lab SMKN 1 Pungging</span>
+              </div>
+              <i class="fa-solid fa-chevron-right hds-arrow"></i>
+            </div>
+
+            <div class="hds-item" onclick="goToDownloadCategory('pendukung')">
+              <div class="hds-icon bg-green"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <div class="hds-info">
+                <strong>Aplikasi Pendukung</strong>
+                <span>VirtualBox, WinRAR, AnyDesk, dan Adobe Reader</span>
+              </div>
+              <i class="fa-solid fa-chevron-right hds-arrow"></i>
+            </div>
+
+            <a href="#unduhan" class="btn-login" style="display:block; text-align:center; text-decoration:none; margin-top:14px;">
+              <i class="fa-solid fa-download"></i> Buka Halaman Unduhan
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 3. VIDEO TKA SECTION (#video) -->
+  <!-- ========================================== -->
+  <section class="page-section" id="video">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>Video Tes Kemampuan Akademik</h2>
+        <p>Sosialisasi dan Kebijakan Pelaksanaan TKA 2026</p>
+      </div>
+
+      <div class="video-box">
+        <iframe src="https://www.youtube.com/embed/iwcC17qeFi4" title="Webinar Kebijakan TKA" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 4. STATISTIK TKA (#statistik) -->
+  <!-- ========================================== -->
+  <section class="page-section" id="statistik" style="background-color: #ffffff; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+    <div class="container">
+      
+      <!-- Filter Bar (Nasional / Provinsi & Jenjang) -->
+      <div class="filter-row">
+        <select class="filter-select" id="filterWilayahSelect" onchange="applyFilters()">
+          <option value="X">Nasional</option>
+        </select>
+        <select class="filter-select" id="filterJenjangSelect" onchange="applyFilters()">
+          <option value="" selected>Semua Jenjang</option>
+          <option value="SD">SD/MI</option>
+          <option value="SMP">SMP/MTs</option>
+          <option value="SMA">SMA/MA</option>
+          <option value="SMK">SMK</option>
+          <option value="Paket">Kesetaraan</option>
+          <option value="SLB">Sekolah Khusus</option>
+        </select>
+      </div>
+
+      <!-- Sub-tabs: Calon Peserta vs Pendaftar -->
+      <div class="chart-tab-switcher">
+        <button type="button" class="chart-tab-btn" id="btnTabCapes" onclick="switchChartTab('capes')">Calon Peserta</button>
+        <button type="button" class="chart-tab-btn active" id="btnTabPendaftar" onclick="switchChartTab('pendaftar')">Pendaftar</button>
+      </div>
+
+      <!-- 4 Stat Summary Cards -->
+      <div class="stats-4-grid">
+        <div class="stat-item-box">
+          <div class="stat-icon-wrap icon-blue"><i class="fa-solid fa-school"></i></div>
+          <div>
+            <div class="stat-val" id="statSatuan">54.212</div>
+            <div class="stat-lbl">Satuan Pendidikan</div>
+          </div>
+        </div>
+        <div class="stat-item-box">
+          <div class="stat-icon-wrap icon-yellow"><i class="fa-solid fa-users"></i></div>
+          <div>
+            <div class="stat-val" id="statCalon">4.149.650</div>
+            <div class="stat-lbl">Calon Peserta</div>
+          </div>
+        </div>
+        <div class="stat-item-box">
+          <div class="stat-icon-wrap icon-green"><i class="fa-solid fa-circle-check"></i></div>
+          <div>
+            <div class="stat-val" id="statLengkap">3.216.273</div>
+            <div class="stat-lbl">Pendaftar Lengkap</div>
+          </div>
+        </div>
+        <div class="stat-item-box">
+          <div class="stat-icon-wrap icon-orange"><i class="fa-solid fa-hourglass-half"></i></div>
+          <div>
+            <div class="stat-val" id="statBelum">933.377</div>
+            <div class="stat-lbl">Belum Lengkap</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Line Charts (Harian & Kumulatif) -->
+      <div class="charts-2-grid">
+        <div class="chart-card">
+          <h4 id="titleChartHarian">Grafik Pendaftar Harian</h4>
+          <div class="chart-canvas-wrap">
+            <canvas id="chartHarian"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <h4 id="titleChartKumulatif">Grafik Pendaftar Harian (Kumulatif)</h4>
+          <div class="chart-canvas-wrap">
+            <canvas id="chartKumulatif"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabel Rekap Pendaftaran TKA (Detailed) -->
+      <div class="white-card">
+        <h4 style="margin-bottom: 14px; font-size: 0.95rem; font-weight: 600; color: #334155;">Rekap Pendaftaran TKA</h4>
+        <div class="table-scroll">
+          <table class="official-table" id="tableRekapPeserta">
+            <thead>
+              <tr>
+                <th rowspan="2" class="text-center" width="40">No</th>
+                <th rowspan="2">Jenjang</th>
+                <th colspan="3" class="text-center">Satuan Pendidikan</th>
+                <th colspan="3" class="text-center">Calon Peserta</th>
+                <th colspan="4" class="text-center">Pendaftar Lengkap</th>
+              </tr>
+              <tr>
+                <th class="text-right">Impor</th>
+                <th class="text-right">Mendaftar</th>
+                <th class="text-right">%</th>
+                <th class="text-right">L</th>
+                <th class="text-right">P</th>
+                <th class="text-right">Jumlah</th>
+                <th class="text-right">L</th>
+                <th class="text-right">P</th>
+                <th class="text-right">Jumlah</th>
+                <th class="text-right">%</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyRekapPeserta">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Section: Persentase Satuan Pelaksana TKA (Bar & Donut) -->
+      <div class="white-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+          <h4 style="font-size: 0.95rem; font-weight: 600; color: #334155;">Persentase Satuan Pendidikan Pelaksana TKA</h4>
+          <div class="chart-tab-switcher" style="margin:0;">
+            <button type="button" class="chart-tab-btn active" id="btnBarStatus" onclick="switchBarChart('status')">Status Pelaksanaan</button>
+            <button type="button" class="chart-tab-btn" id="btnBarModa" onclick="switchBarChart('moda')">Moda Pelaksanaan</button>
+          </div>
+        </div>
+
+        <!-- Horizontal Bar Chart -->
+        <div style="position:relative; height:320px; width:100%; margin-bottom:24px;">
+          <canvas id="chartBarPelaksana"></canvas>
+        </div>
+
+        <!-- Clean Section Divider -->
+        <hr style="border:none; border-top:1px solid #edf2f7; margin: 28px 0 20px 0;">
+
+        <!-- Donut Mini Grid -->
+        <h5 style="font-size: 0.88rem; font-weight: 700; color: #506690; margin-bottom: 14px;">Persentase per Jenjang:</h5>
+        <div class="donut-grid">
+          <div class="donut-box">
+            <h5>SMK</h5>
+            <div class="donut-canvas"><canvas id="donutSMK"></canvas></div>
+            <div class="donut-legend-mini">
+              <span><i class="d-dot bg-mandiri"></i>Mandiri</span>
+              <span><i class="d-dot bg-numpang"></i>Menumpang</span>
+            </div>
+          </div>
+          <div class="donut-box">
+            <h5>SMA / MA</h5>
+            <div class="donut-canvas"><canvas id="donutSMA"></canvas></div>
+            <div class="donut-legend-mini">
+              <span><i class="d-dot bg-mandiri"></i>Mandiri</span>
+              <span><i class="d-dot bg-numpang"></i>Menumpang</span>
+            </div>
+          </div>
+          <div class="donut-box">
+            <h5>SMP / MTs</h5>
+            <div class="donut-canvas"><canvas id="donutSMP"></canvas></div>
+            <div class="donut-legend-mini">
+              <span><i class="d-dot bg-mandiri"></i>Mandiri</span>
+              <span><i class="d-dot bg-numpang"></i>Menumpang</span>
+            </div>
+          </div>
+          <div class="donut-box">
+            <h5>SD / MI</h5>
+            <div class="donut-canvas"><canvas id="donutSD"></canvas></div>
+            <div class="donut-legend-mini">
+              <span><i class="d-dot bg-mandiri"></i>Mandiri</span>
+              <span><i class="d-dot bg-numpang"></i>Menumpang</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dual Tables: Rekap Status & Rekap Moda Pelaksanaan -->
+      <div class="dual-tables-grid">
+        <!-- Status Pelaksanaan Table -->
+        <div class="white-card">
+          <div style="margin-bottom:12px;">
+            <h4 style="font-size: 0.92rem; font-weight: 600; color: #334155; margin-bottom:6px;">Rekap Status Pelaksanaan TKA</h4>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.75rem;">
+              <span style="background:#e8f8f5; color:#117a65; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeStatusMandiri">34.689 (97.5%) Mandiri</span>
+              <span style="background:#fef9e7; color:#d68910; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeStatusNumpang">709 (1.99%) Menumpang</span>
+              <span style="background:#f4f6f7; color:#7f8c8d; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeStatusBelum">180 (0.51%) Belum</span>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="official-table" id="tableStatusJenjang">
+              <thead>
+                <tr>
+                  <th class="text-center" width="35">No</th>
+                  <th>Jenjang</th>
+                  <th class="text-right">Mandiri</th>
+                  <th class="text-right">Menumpang</th>
+                  <th class="text-right">Belum</th>
+                  <th class="text-right">TIK</th>
+                  <th class="text-right">Verifikasi</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyStatusJenjang">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Moda Pelaksanaan Table -->
+        <div class="white-card">
+          <div style="margin-bottom:12px;">
+            <h4 style="font-size: 0.92rem; font-weight: 600; color: #334155; margin-bottom:6px;">Rekap Moda Pelaksanaan TKA</h4>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; font-size:0.75rem;">
+              <span style="background:#e3f2fd; color:#1565c0; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeModaOnline">30.927 (86.93%) Online</span>
+              <span style="background:#e8f4f8; color:#0284c7; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeModaSemi">4.453 (12.52%) Semi Online</span>
+              <span style="background:#f4f6f7; color:#7f8c8d; padding:2px 8px; border-radius:4px; font-weight:600;" id="badgeModaBelum">198 (0.56%) Belum</span>
+            </div>
+          </div>
+          <div class="table-scroll">
+            <table class="official-table" id="tableModaJenjang">
+              <thead>
+                <tr>
+                  <th class="text-center" width="35">No</th>
+                  <th>Jenjang</th>
+                  <th class="text-right">Online</th>
+                  <th class="text-right">Semi Online</th>
+                  <th class="text-right">Belum</th>
+                </tr>
+              </thead>
+              <tbody id="tbodyModaJenjang">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rekap Provinsi (Detailed) -->
+      <div class="white-card">
+        <h4 style="margin-bottom: 14px; font-size: 0.95rem; font-weight: 600; color: #334155;">Rekap Provinsi</h4>
+        <div class="table-scroll">
+          <table class="official-table" id="tableWilayah">
+            <thead>
+              <tr>
+                <th rowspan="2" class="text-center" width="40">No</th>
+                <th rowspan="2">Nama Wilayah</th>
+                <th rowspan="2" class="text-right">Satuan Pendidikan</th>
+                <th colspan="3" class="text-center">Pendaftaran</th>
+                <th colspan="3" class="text-center">Status Pelaksanaan</th>
+                <th colspan="3" class="text-center">Moda Pelaksanaan</th>
+                <th colspan="2" class="text-center">Infrastruktur</th>
+              </tr>
+              <tr>
+                <th class="text-right">Calon Peserta</th>
+                <th class="text-right">Mendaftar</th>
+                <th class="text-right">%</th>
+                <th class="text-right">Mandiri</th>
+                <th class="text-right">Menumpang</th>
+                <th class="text-right">Belum</th>
+                <th class="text-right">Online</th>
+                <th class="text-right">Semi</th>
+                <th class="text-right">Belum</th>
+                <th class="text-right">Mengisi</th>
+                <th class="text-right">Verifikasi</th>
+              </tr>
+            </thead>
+            <tbody id="tbodyWilayah">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 5. BERKAS DOWNLOAD / UNDUHAN (#unduhan) -->
+  <!-- ========================================== -->
+  <section class="page-section" id="unduhan">
+    <div class="container">
+      
+      <div class="download-page-header">
+        <div class="container">
+          <div>
+            <div class="dph-breadcrumbs">Home &nbsp;/&nbsp; Unduhan</div>
+            <h2 class="dph-title">Berkas Download</h2>
+          </div>
+          <div>
+            <span style="font-size:0.85rem; background:rgba(255,255,255,0.15); padding:6px 12px; border-radius:4px;">
+              <i class="fa-solid fa-server"></i> Server Unduhan SMKN 1 Pungging
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="unduhan-layout">
+        <!-- Left: Download items list -->
+        <div id="downloadsListContainer">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <!-- Right: Search & Category Sidebar -->
+        <div>
+          <div class="sidebar-box">
+            <h4>Cari Berkas</h4>
+            <div class="search-input-group">
+              <input type="text" id="searchDownloadInput" placeholder="Nama Berkas, Dokumen..." onkeyup="handleSearchDownloads()">
+              <button type="button" aria-label="Cari"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+          </div>
+
+          <div class="sidebar-box">
+            <h4>Kategori</h4>
+            <ul class="cat-list">
+              <li><a href="javascript:;" data-cat="all" class="active" onclick="filterCategoryBySidebar('all', this)"><span>Semua Kategori</span> <span id="countAll">(8)</span></a></li>
+              <li><a href="javascript:;" data-cat="utama" onclick="filterCategoryBySidebar('utama', this)"><span>Aplikasi Utama TKA</span> <span id="countUtama">(3)</span></a></li>
+              <li><a href="javascript:;" data-cat="server" onclick="filterCategoryBySidebar('server', this)"><span>VHD Server Semi-Daring</span> <span id="countServer">(1)</span></a></li>
+              <li><a href="javascript:;" data-cat="pendukung" onclick="filterCategoryBySidebar('pendukung', this)"><span>Aplikasi Pendukung</span> <span id="countPendukung">(4)</span></a></li>
+            </ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h4>Spesifikasi Perangkat</h4>
+            <ul style="font-size:0.8rem; color:#64748b; line-height:1.7; padding-left:16px;">
+              <li>OS: Windows 10/11 (64-bit/32-bit)</li>
+              <li>RAM: Minimal 4 GB</li>
+              <li>Display: Resolusi min. 1366 x 768</li>
+              <li>Koneksi: LAN Kabel / WiFi Stabil</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 6. JADWAL PELAKSANAAN (#jadwal) -->
+  <!-- ========================================== -->
+  <section class="page-section" id="jadwal" style="background-color: #ffffff; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2>Jadwal Pelaksanaan TKA 2026</h2>
+        <p>Lini Masa Resmi Tahapan Tes Kemampuan Akademik</p>
+      </div>
+
+      <div class="timeline-list">
+        <div class="tl-node">
+          <div class="tl-date-badge">18 Agustus &ndash; 27 September 2026</div>
+          <h4>Pendaftaran Peserta &amp; Pemilihan Mata Uji</h4>
+          <p>Pendataan calon peserta jenjang SMA/SMK dan pemilihan dua mata pelajaran peminatan.</p>
+        </div>
+
+        <div class="tl-node">
+          <div class="tl-date-badge">21 &ndash; 27 September 2026</div>
+          <h4>Simulasi Sistem CBT</h4>
+          <p>Uji coba aplikasi Exambrowser dan kesiapan lab komputer sekolah.</p>
+        </div>
+
+        <div class="tl-node">
+          <div class="tl-date-badge">05 &ndash; 18 Oktober 2026</div>
+          <h4>Gladi Bersih Nasional</h4>
+          <p>Uji kesiapan teknis serentak nasional sebelum pelaksanaan sesi utama.</p>
+        </div>
+
+        <div class="tl-node is-main">
+          <div class="tl-date-badge">26 Oktober &ndash; 08 November 2026</div>
+          <h4>Pelaksanaan Ujian Utama TKA 2026</h4>
+          <p>Hari 1: Bahasa Indonesia &bull; Hari 2: Bahasa Inggris &bull; Hari 3: Matematika &bull; Hari 4: Pilihan.</p>
+        </div>
+
+        <div class="tl-node">
+          <div class="tl-date-badge">16 &ndash; 29 November 2026</div>
+          <h4>Ujian Susulan</h4>
+          <p>Bagi peserta yang berhalangan hadir pada sesi utama karena sakit atau kondisi darurat.</p>
+        </div>
+
+        <div class="tl-node">
+          <div class="tl-date-badge">23 Desember 2026</div>
+          <h4>Pengumuman Hasil &amp; Rilis Sertifikat</h4>
+          <p>Penerbitan sertifikat nilai TKA resmi untuk keperluan SNBP/SNBT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 7. TENTANG & LAB TKJ (#tentang) -->
+  <!-- ========================================== -->
+  <section class="page-section" id="tentang">
+    <div class="container">
+      <div class="white-card">
+        <div class="section-title-wrap" style="text-align: left; margin-bottom: 16px;">
+          <h2>Tentang Tes Kemampuan Akademik (TKA)</h2>
+        </div>
+        <p style="font-size:0.9rem; color:#475569; line-height: 1.8; margin-bottom: 16px;">
+          Tes Kemampuan Akademik (TKA) adalah asesmen terstandar nasional yang diselenggarakan oleh Pusat Asesmen Pendidikan (Pusmendik) Kementerian Pendidikan Dasar dan Menengah untuk mengukur capaian hasil belajar murid.
+        </p>
+        <p style="font-size:0.9rem; color:#475569; line-height: 1.8;">
+          Portal mirror ini disiapkan untuk memfasilitasi peserta didik, proktor, dan teknisi <strong>SMK Negeri 1 Pungging</strong> dalam mempersiapkan perangkat ujian serta memantau perkembangan data TKA secara realtime.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- 8. FOOTER -->
+  <!-- ========================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>Copyright 2026 &copy; SMKN 1 Pungging. All Rights Reserved. &bull; Created by <strong>Sheva Ramdhani</strong></p>
+        <p style="font-size:0.75rem; color:#94a3b8; margin-top:2px;">Untuk tampilan terbaik minimal resolusi 1360 x 768</p>
+      </div>
+      <div>
+        <button class="footer-secret-btn" onclick="openAdminModal()" title="Pengaturan Sumber File">
+          <i class="fa-solid fa-lock"></i>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================== -->
+  <!-- 9. ADMIN MODAL (POPUP DINAMIS) -->
+  <!-- ========================================== -->
+  <div class="admin-modal-backdrop" id="adminModal">
+    <div class="admin-modal-card">
+      <button class="modal-close-btn" onclick="closeAdminModal()">&times;</button>
+      
+      <!-- Login View -->
+      <div id="modalAdminLogin">
+        <h3 style="font-size:1.15rem; margin-bottom:8px; color:#1e293b;"><i class="fa-solid fa-shield-halved"></i> Login Pengelola Sumber File</h3>
+        <p style="font-size:0.84rem; color:#64748b; margin-bottom:16px;">Masukkan kredensial admin server untuk mengelola katalog unduhan.</p>
+        <div class="form-group">
+          <label style="font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px; display:block;">Username:</label>
+          <input type="text" id="mAdminUser" class="form-control" placeholder="Ketik username admin..." autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label style="font-size:0.8rem; font-weight:600; color:#334155; margin-bottom:4px; display:block;">Password:</label>
+          <input type="password" id="mAdminPass" class="form-control" placeholder="Ketik password admin..." autocomplete="off">
+        </div>
+        <button type="button" class="btn-login" onclick="handleModalLogin()"><i class="fa-solid fa-right-to-bracket"></i> Masuk ke Panel</button>
+      </div>
+
+      <!-- Manager View (After Login) -->
+      <div id="modalAdminManager" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+          <h3 style="font-size:1.15rem; color:#1e293b;"><i class="fa-solid fa-sliders"></i> Pengelola Sumber Berkas Unduhan</h3>
+          <button type="button" class="btn-download-action" onclick="handleModalLogout()" style="font-size:0.75rem;"><i class="fa-solid fa-power-off"></i> Keluar</button>
+        </div>
+
+        <!-- Admin 3 Tabs (Manual vs Drive vs Server) -->
+        <div style="display:flex; gap:8px; margin-bottom:16px; border-bottom:1px solid #e2e8f0; padding-bottom:8px; flex-wrap:wrap;">
+          <button type="button" class="chart-tab-btn active" id="btnAdminTabManual" onclick="switchAdminTab('manual')">
+            <i class="fa-solid fa-pen-to-square"></i> Tambah Manual
+          </button>
+          <button type="button" class="chart-tab-btn" id="btnAdminTabLink" onclick="switchAdminTab('link')">
+            <i class="fa-brands fa-google-drive"></i> Deteksi Link / Drive
+          </button>
+          <button type="button" class="chart-tab-btn" id="btnAdminTabServer" onclick="switchAdminTab('server')">
+            <i class="fa-solid fa-server"></i> Direktori Server Linux
+          </button>
+        </div>
+
+        <!-- TAB 1: FORM TAMBAH MANUAL -->
+        <div id="adminPanelTabManual">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:16px; margin-bottom:18px;">
+            <strong style="font-size:0.85rem; color:#334155; display:block; margin-bottom:12px;">
+              <i class="fa-solid fa-file-circle-plus"></i> Isi Manual Data Berkas Unduhan:
+            </strong>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+              <div>
+                <label style="font-size:0.75rem; color:#475569; font-weight:600;">Nama Aplikasi / Berkas:</label>
+                <input type="text" id="manualName" class="form-control" placeholder="Contoh: Exambrowser Client v26">
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#475569; font-weight:600;">Kategori:</label>
+                <select id="manualCat" class="form-control">
+                  <option value="utama">Aplikasi Utama TKA</option>
+                  <option value="server">VHD Server Semi-Daring</option>
+                  <option value="pendukung">Aplikasi Pendukung</option>
+                </select>
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#475569; font-weight:600;">Ukuran Berkas:</label>
+                <input type="text" id="manualSize" class="form-control" placeholder="Contoh: 85 MB, 18.5 GB">
+              </div>
+              <div>
+                <label style="font-size:0.75rem; color:#475569; font-weight:600;">Nama File (Beserta Ekstensi):</label>
+                <input type="text" id="manualFilename" class="form-control" placeholder="Contoh: Exambrowser.exe, vhd.rar">
+              </div>
+              <div style="grid-column:1 / -1;">
+                <label style="font-size:0.75rem; color:#475569; font-weight:600;">URL / Link Unduhan Langsung:</label>
+                <input type="text" id="manualUrl" class="form-control" placeholder="http://... atau /downloads/file.exe atau link Drive">
+              </div>
+            </div>
+            <div style="margin-top:12px;">
+              <button type="button" class="btn-coba-tka" style="margin:0;" onclick="saveManualDownload()">
+                <i class="fa-solid fa-plus"></i> Tambahkan ke Portal
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: Input URL & Google Drive Auto Detect -->
+        <div id="adminPanelTabLink" style="display:none;">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:16px; margin-bottom:18px;">
+            <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:6px; color:#334155;">
+              Masukkan Link Google Drive / SFTPGo / Path Linux:
+            </label>
+            <div style="display:flex; gap:8px;">
+              <input type="text" id="mDetectUrl" class="form-control" placeholder="https://drive.google.com/file/d/... atau /opt/labserver/downloads/exambrowser.zip">
+              <button type="button" class="btn-coba-tka" style="margin:0; white-space:nowrap;" onclick="modalDetectFile()">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Deteksi
+              </button>
+            </div>
+            <small style="display:block; margin-top:6px; color:#64748b; font-size:0.75rem;">
+              💡 Link Google Drive otomatis dikonversi ke <strong>Direct Download</strong>.
+            </small>
+          </div>
+        </div>
+
+        <!-- TAB 3: Direct Linux Server Directory Scanner (Customizable Path) -->
+        <div id="adminPanelTabServer" style="display:none;">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:16px; margin-bottom:18px;">
+            <label style="font-size:0.82rem; font-weight:600; display:block; margin-bottom:6px; color:#334155;">
+              <i class="fa-solid fa-folder-tree"></i> Jalur Direktori Server (Bisa Diketik Custom):
+            </label>
+            <div style="display:flex; gap:8px; margin-bottom:8px;">
+              <input type="text" id="mCustomServerDir" class="form-control" value="/opt/labserver/storage/TKA" placeholder="/opt/labserver/storage/TKA atau /opt/labserver/storage">
+              <button type="button" class="btn-coba-tka" style="margin:0; white-space:nowrap;" onclick="loadServerFiles()">
+                <i class="fa-solid fa-arrows-rotate"></i> Pindai Folder
+              </button>
+            </div>
+            
+            <!-- Quick Preset Buttons -->
+            <div id="quickPresetButtons" style="display:flex; gap:6px; margin-bottom:12px; flex-wrap:wrap; font-size:0.75rem;">
+              <span style="color:#64748b; align-self:center; font-weight:600;">Pilih Cepat:</span>
+              <button type="button" class="btn-preset-dir active" onclick="setPresetDir('/opt/labserver/storage/TKA', this)">📁 storage/TKA</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/storage', this)">📁 storage</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/storage/bengkeltkj', this)">📁 bengkeltkj</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/storage/repo', this)">📁 repo</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/storage/siswa', this)">📁 siswa</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/storage/backup', this)">📁 backup</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/opt/labserver/downloads', this)">📁 downloads</button>
+              <button type="button" class="btn-preset-dir" onclick="setPresetDir('/srv/sftpgo/data', this)">📁 sftpgo</button>
+            </div>
+
+            <div class="table-scroll" style="max-height:220px; overflow-y:auto;">
+              <table class="official-table">
+                <thead>
+                  <tr>
+                    <th>Nama Berkas Server</th>
+                    <th>Ukuran</th>
+                    <th width="90">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="tbodyServerFiles">
+                  <tr><td colspan="3" class="text-center text-muted">Klik "Pindai Folder" untuk melihat isi direktori.</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auto-Detect Result Form -->
+        <div id="mDetectResultForm" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; border-radius:6px; padding:16px; margin-bottom:18px;">
+          <div style="font-size:0.88rem; font-weight:600; color:#166534; margin-bottom:10px;">
+            <i class="fa-solid fa-circle-check"></i> <span id="mDetectSummary">Berkas Terdeteksi</span>
+          </div>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+            <div>
+              <label style="font-size:0.75rem; color:#475569; font-weight:600;">Nama Aplikasi / Berkas:</label>
+              <input type="text" id="mFormName" class="form-control" style="font-size:0.82rem; padding:6px 8px;">
+            </div>
+            <div>
+              <label style="font-size:0.75rem; color:#475569; font-weight:600;">Kategori:</label>
+              <select id="mFormCat" class="form-control" style="font-size:0.82rem; padding:6px 8px;">
+                <option value="utama">Aplikasi Utama TKA</option>
+                <option value="server">VHD Server Semi-Daring</option>
+                <option value="pendukung">Aplikasi Pendukung</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.75rem; color:#475569; font-weight:600;">Ukuran:</label>
+              <input type="text" id="mFormSize" class="form-control" style="font-size:0.82rem; padding:6px 8px;">
+            </div>
+            <div>
+              <label style="font-size:0.75rem; color:#475569; font-weight:600;">Nama File:</label>
+              <input type="text" id="mFormFilename" class="form-control" style="font-size:0.82rem; padding:6px 8px;">
+            </div>
+            <div style="grid-column:1 / -1;">
+              <label style="font-size:0.75rem; color:#475569; font-weight:600;">URL / Jalur Unduhan:</label>
+              <input type="text" id="mFormUrl" class="form-control" style="font-size:0.82rem; padding:6px 8px;">
+            </div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:8px;">
+            <button type="button" class="btn-coba-tka" style="margin:0;" onclick="modalSaveDownload()"><i class="fa-solid fa-floppy-disk"></i> Simpan ke Web</button>
+            <button type="button" class="btn-download-action" onclick="document.getElementById('mDetectResultForm').style.display='none'">Batal</button>
+          </div>
+        </div>
+
+        <!-- Current Downloads Table -->
+        <h4 style="font-size:0.9rem; margin-bottom:8px; color:#334155;">Daftar Berkas Terpasang:</h4>
+        <div class="table-scroll">
+          <table class="official-table">
+            <thead>
+              <tr>
+                <th>Nama</th>
+                <th>Kategori</th>
+                <th>Ukuran</th>
+                <th width="70">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="mAdminTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+</html>

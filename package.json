@@ -1,0 +1,19 @@
+{
+  "name": "tka-smkn1pungging-mirror",
+  "version": "1.0.0",
+  "description": "Portal Mirroring TKA 2026 Kemendikdasmen SMKN 1 Pungging dengan Unduhan SFTPGo",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["tka", "kemendikdasmen", "smkn1pungging", "exambrowser", "sftpgo"],
+  "author": "SMKN 1 Pungging",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  }
+}

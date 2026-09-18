@@ -1,0 +1,126 @@
+{
+  "school": {
+    "name": "SMK NEGERI 1 PUNGGING",
+    "unit": "Kompetensi Keahlian Teknik Komputer dan Jaringan (TKJ)",
+    "serverHost": "servertkj (LABSERVER TKJ)",
+    "district": "Kab. Mojokerto",
+    "province": "Jawa Timur",
+    "npsn": "20502725",
+    "helpdesk": "Tim Proktor & Teknisi Lab TKJ SMKN 1 Pungging",
+    "contact": "tkj@smkn1pungging.sch.id"
+  },
+  "network": {
+    "localIp": "192.168.8.3",
+    "zeroTierIp": "192.168.195.219",
+    "sftpgoPort": "8081",
+    "tkaMirrorPort": "8085"
+  },
+  "sftpgo": {
+    "description": "Konfigurasi URL download otomatis mengarah ke SFTPGo Lab TKJ SMKN 1 Pungging (Local & ZeroTier)",
+    "localBaseUrl": "http://192.168.8.3:8081/web/client/pubshares",
+    "zeroTierBaseUrl": "http://192.168.195.219:8081/web/client/pubshares",
+    "directStoragePath": "/opt/labserver/storage/siswa",
+    "downloads": [
+      {
+        "id": "exambrowser-client-64",
+        "name": "Exambrowser Client 64-Bit (Windows)",
+        "category": "utama",
+        "required": true,
+        "badge": "Wajib - Peserta (x64)",
+        "version": "v26.0628.16",
+        "size": "~ 85 MB",
+        "filename": "Exambrowser_Client_x64.exe",
+        "sftpShareCode": "exambrowser-client-64",
+        "description": "Aplikasi peramban ujian resmi wajib untuk seluruh komputer peserta ujian berbasis Windows 64-bit."
+      },
+      {
+        "id": "exambrowser-client-32",
+        "name": "Exambrowser Client 32-Bit (Windows)",
+        "category": "utama",
+        "required": true,
+        "badge": "Alternatif (x86)",
+        "version": "v26.0628.16",
+        "size": "~ 78 MB",
+        "filename": "Exambrowser_Client_x86.exe",
+        "sftpShareCode": "exambrowser-client-32",
+        "description": "Aplikasi peramban ujian alternatif untuk komputer klien dengan sistem operasi 32-bit."
+      },
+      {
+        "id": "exambrowser-admin",
+        "name": "Exambrowser Admin / Proktor Browser",
+        "category": "utama",
+        "required": false,
+        "badge": "Khusus Proktor",
+        "version": "v26.0628.09",
+        "size": "~ 92 MB",
+        "filename": "Exambrowser_Admin.exe",
+        "sftpShareCode": "exambrowser-admin",
+        "description": "Aplikasi khusus Proktor dan Pengawas untuk sinkronisasi, transfer token, dan monitoring ujian peserta."
+      },
+      {
+        "id": "vhd-tka-2026",
+        "name": "Virtual Hard Disk (VHD) TKA 2026",
+        "category": "server",
+        "required": true,
+        "badge": "Semi-Daring Lab",
+        "version": "v26.1-Fresh",
+        "size": "~ 18.5 GB",
+        "filename": "VHD_TKA_2026_SemiDaring.rar",
+        "sftpShareCode": "vhd-tka-2026",
+        "description": "Berkas Image Virtual Machine server CBT TKA 2026 untuk Lab Server SMKN 1 Pungging."
+      },
+      {
+        "id": "virtualbox-7",
+        "name": "Oracle VM VirtualBox 7.0.x",
+        "category": "pendukung",
+        "required": false,
+        "badge": "Server Engine",
+        "version": "v7.0.20",
+        "size": "~ 105 MB",
+        "filename": "VirtualBox-7.0.20-Win.exe",
+        "sftpShareCode": "virtualbox-7",
+        "description": "Perangkat lunak virtualisasi untuk menjalankan VHD server CBT di server lokal sekolah."
+      },
+      {
+        "id": "winrar-x64",
+        "name": "WinRAR 64-Bit / 7-Zip",
+        "category": "pendukung",
+        "required": false,
+        "badge": "Ekstraktor",
+        "version": "v7.01",
+        "size": "~ 3.5 MB",
+        "filename": "winrar-x64-701.exe",
+        "sftpShareCode": "winrar-x64",
+        "description": "Aplikasi ekstraksi arsip untuk mengekstrak berkas VHD dan installer ujian yang terkompresi."
+      },
+      {
+        "id": "anydesk",
+        "name": "AnyDesk Remote Lab Support",
+        "category": "pendukung",
+        "required": false,
+        "badge": "Remote Support",
+        "version": "v8.1.0",
+        "size": "~ 5 MB",
+        "filename": "AnyDesk.exe",
+        "sftpShareCode": "anydesk",
+        "description": "Aplikasi remote desktop cepat untuk bantuan teknis dan pendampingan proktor jarak jauh."
+      },
+      {
+        "id": "adobe-reader",
+        "name": "Adobe Acrobat Reader / Dokumen Juknis",
+        "category": "pendukung",
+        "required": false,
+        "badge": "Dokumen Juknis",
+        "version": "v2026",
+        "size": "~ 2 MB",
+        "filename": "Juknis_POS_TKA_2026.pdf",
+        "sftpShareCode": "adobe-reader",
+        "description": "Dokumen resmi Petunjuk Teknis & POS Pelaksanaan TKA 2026 Kemendikdasmen."
+      }
+    ]
+  },
+  "tkaApi": {
+    "baseUrl": "https://tka.kemendikdasmen.go.id",
+    "cacheDurationSeconds": 1800
+  }
+}
